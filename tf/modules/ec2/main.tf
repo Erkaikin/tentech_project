@@ -36,6 +36,7 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 EOF
 
 */
+
   tags = {
     Name = "project_ec2_${count.index + 1}"
   }

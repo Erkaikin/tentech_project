@@ -197,6 +197,13 @@ module "ec2" {
   subnet_id = [module.pub_sub.sub_id[0], module.pub_sub.sub_id[1]]
 }
 
+
+output "instance_public_ip" {
+   description = "Public IP of EC2 instance"
+   value       = module.ec2.instance_id
+}
+
+
 # create target group and attach to ec2s
 
 module "tg_gr" {
