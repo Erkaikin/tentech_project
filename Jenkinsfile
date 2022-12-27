@@ -14,7 +14,7 @@ pipeline {
   stages {
     stage('Terraform init') {
       steps {
-        dir('terraform-simple') {
+        dir('tf') {
           sh 'terraform init'
         }
       }
@@ -25,7 +25,7 @@ pipeline {
         environment name: 'ExecuteAction', value: 'build'
       }
       steps {
-        dir('terraform-simple') {
+        dir('tf') {
           sh 'terraform plan'
         }
       }
@@ -36,7 +36,7 @@ pipeline {
         environment name: 'ExecuteAction', value: 'build'
       }
       steps {
-        dir('terraform-simple') {
+        dir('tf') {
           sh 'terraform apply --auto-approve'
         }
       }
