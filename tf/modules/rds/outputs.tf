@@ -1,4 +1,4 @@
 output "rds_endpoint" {
-    value = aws_db_instance.db.rds_endpoint
-  
+  description = "The connection endpoint"
+  value       = aws_db_instance.db.endpoint
 }
