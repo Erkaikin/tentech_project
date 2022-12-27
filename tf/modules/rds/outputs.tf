@@ -1,4 +1,4 @@
 output "rds_endpoint" {
-    value = aws_db_instance.db.address
+    value = aws_db_instance.db.rds_endpoint
   
 }

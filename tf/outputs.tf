@@ -22,6 +22,6 @@ output "instance_public_ip2" {
 }
 
 output "rds_endpoint" {
-    value = module.rds.address
+    value = module.rds.rds_endpoint
   
 }
