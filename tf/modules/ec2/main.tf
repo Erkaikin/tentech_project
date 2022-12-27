@@ -45,3 +45,4 @@ EOF
     aws_key_pair.ssh_key
   ]
 }
+

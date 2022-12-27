@@ -198,11 +198,6 @@ module "ec2" {
 
 }
 
-output "instance_public_ip" {
-   description = "Public IP of EC2 instance"
-   value       = module.ec2.instance_id
-}
-
 
 # create target group and attach to ec2s
 
