@@ -9,7 +9,7 @@ wordpress_packages:
   - php
   - php-mysqlnd
   - php-mbstring
-wordpress_database_host: 'terraform-20221215220608177800000001.cz9lujtdwkpp.us-east-1.rds.amazonaws.com' #replace with RDS endpoint
+wordpress_database_host: 'rds_host' #replace with RDS endpoint
 wordpress_database: 'wordpress'
 wordpress_user: 'admin'
 wordpress_password: 'adminadmin'
