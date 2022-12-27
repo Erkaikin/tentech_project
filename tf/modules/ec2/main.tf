@@ -24,7 +24,7 @@ resource "aws_instance" "ec2" {
   subnet_id              = var.subnet_id[count.index]
   key_name               = aws_key_pair.ssh_key.key_name
   vpc_security_group_ids = var.vpc_security_group_id
-
+  
 /*
   user_data = <<EOF
    #!/bin/bash

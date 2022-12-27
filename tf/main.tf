@@ -197,8 +197,6 @@ module "ec2" {
   subnet_id = [module.pub_sub.sub_id[0], module.pub_sub.sub_id[1]]
 
 }
-
-
 # create target group and attach to ec2s
 
 module "tg_gr" {
