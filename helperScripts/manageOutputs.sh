@@ -7,7 +7,7 @@ rds_endpoint=$(terraform output -json | jq -r .rds_endpoint.value | cut -d ':' -
 
 
 
-echo $ec2one >> ../ansible/inventory/hosts
-echo $ec2two >> ../ansible/inventory/hosts
-sed -i "s/rds_host/$rds_endpoint/g" ../ansible/wordpress/defaults/main.yml
-sed -i "s/rds_db_password/$rds_password/g" ../ansible/wordpress/defaults/main.yml
+sudo echo $ec2one >> ../ansible/inventory/hosts
+sudo echo $ec2two >> ../ansible/inventory/hosts
+sudo sed -i "s/rds_host/$rds_endpoint/g" ../ansible/wordpress/defaults/main.yml
+sudo sed -i "s/rds_db_password/$rds_password/g" ../ansible/wordpress/defaults/main.yml
