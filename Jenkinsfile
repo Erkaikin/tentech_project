@@ -14,7 +14,7 @@ pipeline {
   stages {
     stage('Terraform init') {
       steps {
-        dir('tf') {
+        dir('tentech_project/tf/') {
           sh 'terraform init'
         }
       }
@@ -25,7 +25,7 @@ pipeline {
         environment name: 'ExecuteAction', value: 'build'
       }
       steps {
-        dir('tf') {
+        dir('tentech_project/tf/') {
           sh 'terraform plan'
         }
       }
@@ -36,7 +36,7 @@ pipeline {
         environment name: 'ExecuteAction', value: 'build'
       }
       steps {
-        dir('tf') {
+        dir('tenetch_project/tf') {
           sh 'terraform apply --auto-approve'
         }
       }
@@ -47,7 +47,7 @@ pipeline {
         environment name: 'ExecuteAction', value: 'build'
       }
       steps {
-        dir('helperScripts') {
+        dir('tentech_project/helperScripts/') {
           sh './manageOutputs.sh'
         }
       }
@@ -58,7 +58,7 @@ pipeline {
         environment name: 'ExecuteAction', value: 'build'
       }
       steps {
-        dir('ansible') {
+        dir('tentech_project/ansible/') {
           sh 'ansible-playbook ./playbooks/wordpress.yml'
         }
       }
