@@ -72,7 +72,7 @@ pipeline {
       }
       steps {
         dir('tf') {
-          sh 'yes'
+          sh 'terraform destroy -yes'
         }
       }
     }
