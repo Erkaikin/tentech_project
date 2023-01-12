@@ -12,5 +12,5 @@ wordpress_packages:
 wordpress_database_host: 'rds_host' #replace with RDS endpoint
 wordpress_database: 'wordpress'
 wordpress_user: 'admin'
-wordpress_password: 'rds_db_password'
+wordpress_password: 'adminadmin'
 wordpress_configuration: '/var/www/html/wp-config.php'

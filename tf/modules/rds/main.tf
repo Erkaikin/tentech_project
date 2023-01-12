@@ -1,7 +1,8 @@
-data "aws_secretsmanager_secret_version" "creds" {
+/*data "aws_secretsmanager_secret_version" "creds" {
   secret_id = "rds_key"
 
 }
+*/
 
 resource "aws_db_instance" "db" {
   allocated_storage           = 20
@@ -10,7 +11,7 @@ resource "aws_db_instance" "db" {
   instance_class              = "db.t3.micro"
   db_name                     = "wordpress"
   username                    = "admin"
-  password                    = data.aws_secretsmanager_secret_version.creds.id
+  password                    = "adminadmin"
   vpc_security_group_ids      = var.db_security_group_id
   db_subnet_group_name        = var.db_subnet_group_name
   multi_az                    = false
