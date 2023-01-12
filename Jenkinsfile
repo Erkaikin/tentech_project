@@ -63,7 +63,18 @@ pipeline {
         }
       }
     }
+  
+
+
+    stage('Terraform destroy') {
+      when {
+        environment name: 'ExecuteAction', value: 'destroy'
+      }
+      steps {
+        dir('tf') {
+          sh 'yes'
+        }
+      }
+    }
   }
 }
-
-

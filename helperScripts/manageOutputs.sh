@@ -1,9 +1,9 @@
 #!/bin/bash
 
 rds_password=$(aws secretsmanager get-secret-value --secret-id rds_key --region us-east-1 | jq .SecretString | cut -d ':' -f 2 | tr -d '\\' | tr -d '"' | tr -d '}')
-ec2one=$(cd ../tf && terraform output -json | jq -r .instance_public_ip1.value)
-ec2two=$(cd ../tf && terraform output -json | jq -r .instance_public_ip2.value)
-rds_endpoint=$(terraform output -json | jq -r .rds_endpoint.value | cut -d ':' -f 1)
+ec2one=$(cd var/lib/jenkins/workspace/pr-jenkins/tf && terraform output -json | jq -r .instance_public_ip1.value)
+ec2two=$(cd var/lib/jenkins/workspace/pr-jenkins/tf && terraform output -json | jq -r .instance_public_ip2.value)
+rds_endpoint=$(cd var/lib/jenkins/workspace/pr-jenkins/tf && terraform output -json | jq -r .rds_endpoint.value | cut -d ':' -f 1)
 
 
 
